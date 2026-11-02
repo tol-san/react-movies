@@ -1,5 +1,83 @@
 export const MOVIES_DATA = [
   {
+    id: 101,
+    title: "Evil Dead Rise",
+    vote_average: 6.6,
+    poster_path: "/images/poster-evil-dead-rise.jpg",
+    poster_url: "/images/poster-evil-dead-rise.jpg",
+    release_date: "2023-04-21",
+    original_language: "en",
+    overview: "A twisted tale of two estranged sisters whose reunion is cut short by the rise of flesh-possessing demons, thrusting them into a primal battle for survival in an LA high-rise.",
+    genres: ["Horror", "Evil Dead Saga", "Supernatural"],
+    tagline: "Mommy loves you to death.",
+    trailerId: "smTK_AeAPHs"
+  },
+  {
+    id: 102,
+    title: "The Evil Dead",
+    vote_average: 7.4,
+    poster_path: "/images/poster-the-evil-dead.jpg",
+    poster_url: "/images/poster-the-evil-dead.jpg",
+    release_date: "1981-10-15",
+    original_language: "en",
+    overview: "Five friends travel to a remote Tennessee cabin in the woods, where they unintentionally unleash flesh-possessing demons after discovering the Necronomicon Ex-Mortis.",
+    genres: ["Horror", "Evil Dead Saga", "Cult Classic"],
+    tagline: "The ultimate experience in grueling terror.",
+    trailerId: "NL6jL8yD_Lg"
+  },
+  {
+    id: 103,
+    title: "Evil Dead II",
+    vote_average: 7.7,
+    poster_path: "/images/about-poster-clean.jpg",
+    poster_url: "/images/about-poster-clean.jpg",
+    release_date: "1987-03-13",
+    original_language: "en",
+    overview: "Ash Williams and his girlfriend Linda go to a secluded cabin in the woods where an audiotape summons bloodthirsty spirits. Ash fastens a chainsaw to his severed wrist.",
+    genres: ["Horror", "Evil Dead Saga", "Comedy"],
+    tagline: "Dead by dawn!",
+    trailerId: "6lM3NPeEG24"
+  },
+  {
+    id: 104,
+    title: "Army of Darkness",
+    vote_average: 7.4,
+    poster_path: "/images/hero-main.jpg",
+    poster_url: "/images/hero-main.jpg",
+    release_date: "1992-10-09",
+    original_language: "en",
+    overview: "Ash is inadvertently transported back in time to 1300 A.D., where he must lead a medieval army of knights against the Army of the Dead to retrieve the Necronomicon and return home.",
+    genres: ["Horror", "Evil Dead Saga", "Action"],
+    tagline: "Trapped in time. Surrounded by evil. Low on gas.",
+    trailerId: "CZ-wU5eT4uE"
+  },
+  {
+    id: 105,
+    title: "Evil Dead (2013)",
+    vote_average: 6.5,
+    poster_path: "/images/about-deadite.jpg",
+    poster_url: "/images/about-deadite.jpg",
+    release_date: "2013-04-05",
+    original_language: "en",
+    overview: "Mia, a recovering addict, retreats to a secluded forest cabin with her brother and friends. When they discover the Naturom Demonto, an ancient demon awakens to possess them one by one.",
+    genres: ["Horror", "Evil Dead Saga", "Supernatural"],
+    tagline: "The most terrifying film you will ever experience.",
+    trailerId: "BHDJm1D26CE"
+  },
+  {
+    id: 106,
+    title: "Ash vs Evil Dead",
+    vote_average: 8.4,
+    poster_path: "/images/ash-and-car.jpg",
+    poster_url: "/images/ash-and-car.jpg",
+    release_date: "2015-10-31",
+    original_language: "en",
+    overview: "Thirty years after surviving the cabin massacre, Ash Williams is forced to come out of retirement and wield his chainsaw once more when the Deadite scourge returns.",
+    genres: ["Horror", "Evil Dead Saga", "Action"],
+    tagline: "Evil has met its match.",
+    trailerId: "unnLg1TPCYM"
+  },
+  {
     id: 1,
     title: "Inception",
     vote_average: 8.4,
@@ -62,8 +140,8 @@ export const MOVIES_DATA = [
     poster_url: "/posters/spider-man-across-the-spider-verse.jpg",
     release_date: "2023-05-31",
     original_language: "en",
-    overview: "After reuniting with Gwen Stacy, Brooklyn's full-time, friendly neighborhood Spider-Man is catapulted across the Multiverse.",
-    genres: ["Animation", "Action", "Adventure", "Sci-Fi"]
+    overview: "Miles Morales catapults across the Multiverse, where he encounters a team of Spider-People charged with protecting its very existence.",
+    genres: ["Animation", "Action", "Adventure"]
   },
   {
     id: 7,
@@ -78,83 +156,17 @@ export const MOVIES_DATA = [
   },
   {
     id: 8,
-    title: "The Godfather",
-    vote_average: 8.7,
-    poster_path: "/posters/the-godfather.jpg",
-    poster_url: "/posters/the-godfather.jpg",
-    release_date: "1972-03-14",
-    original_language: "en",
-    overview: "Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family.",
-    genres: ["Drama", "Crime"]
-  },
-  {
-    id: 9,
     title: "Pulp Fiction",
     vote_average: 8.5,
     poster_path: "/posters/pulp-fiction.jpg",
     poster_url: "/posters/pulp-fiction.jpg",
     release_date: "1994-09-10",
     original_language: "en",
-    overview: "A burger-loving hit man, his philosophical partner, and a washed-up boxer converge in four tales of violence and redemption.",
+    overview: "A burger-loving hit man, his philosophical partner, a drug-addled gangster's moll and a washed-up boxer converge in four tales of violence and redemption.",
     genres: ["Thriller", "Crime"]
   },
   {
-    id: 10,
-    title: "The Matrix",
-    vote_average: 8.2,
-    poster_path: "/posters/the-matrix.jpg",
-    poster_url: "/posters/the-matrix.jpg",
-    release_date: "1999-03-30",
-    original_language: "en",
-    overview: "Set in the 22nd century, the film tells the story of a computer hacker who joins a group of underground insurgents fighting the machines.",
-    genres: ["Action", "Sci-Fi"]
-  },
-  {
-    id: 11,
-    title: "Gladiator",
-    vote_average: 8.2,
-    poster_path: "/posters/gladiator.jpg",
-    poster_url: "/posters/gladiator.jpg",
-    release_date: "2000-05-04",
-    original_language: "en",
-    overview: "In the year 180, the death of emperor Marcus Aurelius throws the Roman Empire into turmoil.",
-    genres: ["Action", "Drama", "Adventure"]
-  },
-  {
-    id: 12,
-    title: "Spirited Away",
-    vote_average: 8.5,
-    poster_path: "/posters/spirited-away.jpg",
-    poster_url: "/posters/spirited-away.jpg",
-    release_date: "2001-07-20",
-    original_language: "ja",
-    overview: "A young girl, Chihiro, becomes trapped in a strange new world of spirits. When her parents undergo a mysterious transformation, she must call upon the courage she never knew she had.",
-    genres: ["Animation", "Family", "Fantasy"]
-  },
-  {
-    id: 13,
-    title: "Parasite",
-    vote_average: 8.5,
-    poster_path: "/posters/parasite.jpg",
-    poster_url: "/posters/parasite.jpg",
-    release_date: "2019-05-30",
-    original_language: "ko",
-    overview: "All unemployed, Ki-taek's family takes peculiar interest in the wealthy and glamorous Parks for their livelihood until they get entangled in an unexpected incident.",
-    genres: ["Comedy", "Thriller", "Drama"]
-  },
-  {
-    id: 14,
-    title: "Whiplash",
-    vote_average: 8.4,
-    poster_path: "/posters/whiplash.jpg",
-    poster_url: "/posters/whiplash.jpg",
-    release_date: "2014-10-10",
-    original_language: "en",
-    overview: "Under the direction of a ruthless instructor, a talented young drummer begins to pursue perfection at any cost.",
-    genres: ["Drama", "Music"]
-  },
-  {
-    id: 15,
+    id: 9,
     title: "Fight Club",
     vote_average: 8.4,
     poster_path: "/posters/fight-club.jpg",
@@ -165,52 +177,52 @@ export const MOVIES_DATA = [
     genres: ["Drama"]
   },
   {
-    id: 16,
-    title: "Avengers: Endgame",
-    vote_average: 8.3,
-    poster_path: "/posters/avengers-endgame.jpg",
-    poster_url: "/posters/avengers-endgame.jpg",
-    release_date: "2019-04-24",
+    id: 10,
+    title: "Gladiator",
+    vote_average: 8.2,
+    poster_path: "/posters/gladiator.jpg",
+    poster_url: "/posters/gladiator.jpg",
+    release_date: "2000-05-04",
     original_language: "en",
-    overview: "After the devastating events of Infinity War, the universe is in ruins. With the help of remaining allies, the Avengers assemble once more.",
-    genres: ["Adventure", "Sci-Fi", "Action"]
+    overview: "In the year 180, the death of emperor Marcus Aurelius throws the Roman Empire into turmoil. Maximum, one of the Roman army's most capable generals, is betrayed.",
+    genres: ["Action", "Drama", "Adventure"]
   }
 ];
 
 export const INITIAL_TRENDING_MOVIES = [
   {
-    $id: "trend-1",
-    id: 5,
-    title: "Dune: Part Two",
-    poster_url: "/posters/dune-part-two.jpg",
-    count: 24
+    $id: "trend-evil-1",
+    id: 101,
+    title: "Evil Dead Rise",
+    poster_url: "/images/poster-evil-dead-rise.jpg",
+    count: 48
   },
   {
-    $id: "trend-2",
-    id: 4,
-    title: "Oppenheimer",
-    poster_url: "/posters/oppenheimer.jpg",
-    count: 19
+    $id: "trend-evil-2",
+    id: 102,
+    title: "The Evil Dead",
+    poster_url: "/images/poster-the-evil-dead.jpg",
+    count: 39
   },
   {
-    $id: "trend-3",
-    id: 6,
-    title: "Spider-Man: Across the Spider-Verse",
-    poster_url: "/posters/spider-man-across-the-spider-verse.jpg",
-    count: 17
+    $id: "trend-evil-3",
+    id: 103,
+    title: "Evil Dead II",
+    poster_url: "/images/about-poster-clean.jpg",
+    count: 34
   },
   {
-    $id: "trend-4",
-    id: 1,
-    title: "Inception",
-    poster_url: "/posters/inception.jpg",
-    count: 14
+    $id: "trend-evil-4",
+    id: 104,
+    title: "Army of Darkness",
+    poster_url: "/images/hero-main.jpg",
+    count: 28
   },
   {
-    $id: "trend-5",
-    id: 2,
-    title: "Interstellar",
-    poster_url: "/posters/interstellar.jpg",
-    count: 11
+    $id: "trend-evil-5",
+    id: 106,
+    title: "Ash vs Evil Dead",
+    poster_url: "/images/ash-and-car.jpg",
+    count: 22
   }
 ];

@@ -1,185 +1,111 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@500;600;700&display=swap");
 
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #030014;
+  --color-primary: #070406;
+  --color-dark-100: #0f070a;
+  --color-dark-200: #170b10;
+  --color-dark-300: #210e16;
+  --color-dark-card: #12080c;
 
-  --color-light-100: #cecefb;
-  --color-light-200: #a8b5db;
+  --color-evil-red: #c1121f;
+  --color-evil-crimson: #990000;
+  --color-evil-bright: #e63946;
+  --color-evil-border: #2b1117;
+  --color-evil-border-glow: #5e1622;
 
-  --color-gray-100: #9ca4ab;
+  --color-light-100: #f5edef;
+  --color-light-200: #cbb4bc;
+  --color-gray-100: #9da3af;
+  --color-gray-200: #6b7280;
 
-  --color-dark-100: #0f0d23;
-
-  --font-dm-sans: DM Sans, sans-serif;
+  /* 3 Paired Google Font Families */
+  --font-display: "Cinzel", serif;
+  --font-accent: "Space Grotesk", sans-serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
 
   --breakpoint-xs: 480px;
-
-  --background-image-hero-pattern: url("/hero-bg.png");
 }
 
 @layer base {
+  * {
+    border-color: #240e14;
+  }
+
   body {
-    font-family: "DM Sans", serif;
-    font-optical-sizing: auto;
-    background: #030014;
+    font-family: var(--font-body);
+    background-color: #070406;
+    color: #e2e8f0;
     overflow-x: hidden;
+    letter-spacing: -0.01em;
   }
 
-  h1 {
-    @apply mx-auto max-w-4xl text-center text-5xl font-bold leading-tight tracking-[-1%] text-white sm:text-[64px] sm:leading-[76px];
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: 0.04em;
   }
 
-  h2 {
-    @apply text-2xl font-bold text-white sm:text-3xl;
+  .font-accent {
+    font-family: var(--font-accent);
   }
 
-  main {
-    @apply min-h-screen relative bg-primary overflow-x-hidden;
-  }
-
-  header {
-    @apply sm:mt-10 mt-5;
-  }
-
-  header img {
-    @apply w-full max-w-lg h-auto object-contain mx-auto drop-shadow-md;
+  .font-body {
+    font-family: var(--font-body);
   }
 }
 
 @layer components {
-  .pattern {
-    @apply bg-hero-pattern w-full h-screen bg-center bg-cover absolute z-0 pointer-events-none;
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
+  /* Minimalist Red CTA Button */
+  .btn-evil-red {
+    font-family: var(--font-accent);
+    background-color: #c1121f;
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 20px rgba(193, 18, 31, 0.35);
   }
 
-  .wrapper {
-    @apply px-5 py-12 xs:p-10 max-w-7xl mx-auto flex flex-col relative z-10;
+  .btn-evil-red:hover {
+    background-color: #dc2626;
+    box-shadow: 0 6px 28px rgba(220, 38, 38, 0.55);
+    transform: translateY(-1px);
   }
 
-  .trending {
-    @apply mt-20;
-
-    & ul {
-      @apply flex flex-row overflow-x-auto overflow-y-hidden gap-5 -mt-10 w-full hide-scrollbar pb-6 pt-2;
-    }
-
-    & ul li {
-      @apply min-w-[230px] flex flex-row items-center transition-transform duration-300 hover:scale-105;
-    }
-
-    & ul li p {
-      @apply fancy-text mt-[22px] text-nowrap select-none;
-    }
-
-    & ul li img {
-      @apply w-[127px] h-[163px] rounded-lg object-cover -ml-3.5 shadow-lg shadow-black/40;
-    }
+  .btn-evil-red:active {
+    transform: translateY(0);
   }
 
-  .search {
-    @apply w-full bg-light-100/5 px-4 py-3 rounded-xl mt-10 max-w-3xl mx-auto transition-all duration-300 focus-within:ring-2 focus-within:ring-indigo-500/40 focus-within:bg-light-100/10;
-
-    & div {
-      @apply relative flex items-center;
-    }
-
-    & img {
-      @apply absolute left-2 h-5 w-5;
-    }
-
-    & input {
-      @apply w-full bg-transparent py-2 pr-10 pl-10 text-base text-gray-200 placeholder-light-200 outline-hidden;
-    }
+  /* Clean Modern Glass Card */
+  .evil-card {
+    background: rgba(18, 8, 12, 0.7);
+    border: 1px solid rgba(59, 23, 31, 0.6);
+    backdrop-filter: blur(16px);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .all-movies {
-    @apply space-y-9 mt-12;
-
-    & ul {
-      @apply grid grid-cols-1 gap-5 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4;
-    }
-  }
-
-  .movie-card {
-    @apply bg-dark-100 p-5 rounded-2xl shadow-inner shadow-light-100/10 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-indigo-500/15 flex flex-col justify-between;
-
-    & img {
-      @apply rounded-lg aspect-[2/3] w-full object-cover transition-opacity duration-300;
-    }
-
-    & h3 {
-      @apply text-white font-bold text-base line-clamp-1;
-    }
-
-    & .content {
-      @apply mt-2 flex flex-row items-center flex-wrap gap-2;
-    }
-
-    & .rating {
-      @apply flex flex-row items-center gap-1;
-    }
-
-    & .rating img {
-      @apply size-4 object-contain;
-    }
-
-    & .rating p {
-      @apply font-bold text-base text-white;
-    }
-
-    & .content span {
-      @apply text-sm text-gray-100;
-    }
-
-    & .content .lang {
-      @apply capitalize text-gray-100 font-medium text-base;
-    }
-
-    & .content .year {
-      @apply text-gray-100 font-medium text-base;
-    }
+  .evil-card:hover {
+    border-color: rgba(193, 18, 31, 0.5);
+    box-shadow: 0 16px 40px -15px rgba(193, 18, 31, 0.2);
   }
 }
 
-@utility text-gradient {
-  @apply bg-linear-to-r from-[#D6C7FF] to-[#AB8BFF] bg-clip-text text-transparent;
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
 
-@utility fancy-text {
-  -webkit-text-stroke: 5px rgba(206, 206, 251, 0.5);
-  font-size: 190px;
-  font-family: "Bebas Neue", sans-serif;
+::-webkit-scrollbar-track {
+  background: #070406;
 }
 
-@utility hide-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
+::-webkit-scrollbar-thumb {
+  background: #2b1117;
+  border-radius: 4px;
 }
 
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-
-.skeleton-shimmer {
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0.03) 20%,
-    rgba(255, 255, 255, 0.09) 50%,
-    rgba(255, 255, 255, 0.03) 80%
-  );
-  background-size: 200% 100%;
-  animation: shimmer 1.8s infinite ease-in-out;
+::-webkit-scrollbar-thumb:hover {
+  background: #c1121f;
 }
