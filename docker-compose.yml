@@ -1,0 +1,11 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: react-movies:latest
+    container_name: react-movies
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+
