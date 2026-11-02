@@ -48,6 +48,8 @@ pipeline {
                     )
                 ]) {
                     sh '''
+                        set -e
+
                         echo "$DOCKER_TOKEN" | docker login \
                           -u "$DOCKER_USER" --password-stdin
 
@@ -62,23 +64,25 @@ pipeline {
 
         stage('Deploy Production') {
             steps {
-                sshagent(credentials: ['production-ssh']) {
+                sshagent(credentials: ['jenkins']) {
                     sh '''
-                        ssh -o StrictHostKeyChecking=yes \
-                          ubuntu@${PRODUCTION_HOST} "
-                            docker pull ${IMAGE}:${IMAGE_TAG} &&
-                            docker rm -f tv-time || true
-                          "
-                    '''
+                        ssh -o BatchMode=yes \
+                            -o StrictHostKeyChecking=yes \
+                            ubuntu@${PRODUCTION_HOST} "
+                                set -e
 
-                    sh '''
-                        ssh ubuntu@${PRODUCTION_HOST} "
-                            docker run -d \
-                              --name tv-time \
-                              --restart unless-stopped \
-                              -p 127.0.0.1:3000:80 \
-                              ${IMAGE}:${IMAGE_TAG}
-                        "
+                                docker pull ${IMAGE}:${IMAGE_TAG}
+
+                                docker rm -f tv-time || true
+
+                                docker run -d \
+                                  --name tv-time \
+                                  --restart unless-stopped \
+                                  -p 127.0.0.1:3000:80 \
+                                  ${IMAGE}:${IMAGE_TAG}
+
+                                docker ps --filter name=tv-time
+                            "
                     '''
                 }
             }
@@ -89,9 +93,9 @@ pipeline {
         success {
             echo 'TV Time deployed successfully!'
         }
+
         failure {
             echo 'Pipeline failed. Check the stage logs.'
         }
     }
 }
-
