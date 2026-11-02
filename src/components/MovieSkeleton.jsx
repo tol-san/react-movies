@@ -38,3 +38,4 @@ export const MovieGridSkeleton = ({ count = 8 }) => {
     </div>
   )
 }
+
