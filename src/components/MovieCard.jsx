@@ -8,15 +8,21 @@ const MovieCard = ({ movie:
     : '/no-movie.png';
 
   return (
-    <div className="movie-card">
-      <img
-        src={imageSrc}
-        alt={title}
-        loading="lazy"
-      />
+    <div className="movie-card group">
+      <div className="overflow-hidden rounded-lg bg-dark-100">
+        <img
+          src={imageSrc}
+          alt={title}
+          loading="lazy"
+          onError={(e) => {
+            e.currentTarget.src = '/no-movie.png';
+          }}
+          className="aspect-[2/3] w-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+        />
+      </div>
 
       <div className="mt-4">
-        <h3>{title}</h3>
+        <h3 title={title}>{title}</h3>
 
         <div className="content">
           <div className="rating">
@@ -36,4 +42,5 @@ const MovieCard = ({ movie:
     </div>
   )
 }
+
 export default MovieCard
