@@ -65,6 +65,8 @@ pipeline {
         stage('Deploy Production') {
             steps {
                 sshagent(credentials: ['jenkins']) {
+                    sh 'ssh-add -L'
+
                     sh '''
                         ssh -o BatchMode=yes \
                             -o StrictHostKeyChecking=yes \
